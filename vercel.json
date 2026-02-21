@@ -1,0 +1,33 @@
+{
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/ask",
+            "destination": "/api/index"
+        },
+        {
+            "source": "/api/ask",
+            "destination": "/api/index"
+        },
+        {
+            "source": "/proxy-chat",
+            "destination": "/api/index"
+        },
+        {
+            "source": "/health",
+            "destination": "/api/index"
+        },
+        {
+            "source": "/model-info",
+            "destination": "/api/index"
+        },
+        {
+            "source": "/",
+            "destination": "/static/index.html"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/static/$1"
+        }
+    ]
+}
