@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hindav's Portfolio | Data Science & SDE </title>
+
+
+    <!-- Meta Description for SEO -->
+    <meta name="description"
+        content="Check out Hindav's portfolio showcasing projects in software development, data science, and machine learning. Explore practical applications, demonstrated skills, and accomplishments in SDE and AI.">
+
+    <!-- Open Graph Tags for Social Sharing -->
+    <meta property="og:title" content="Hindav's Portfolio | Data Science & SDE">
+    <meta property="og:description" content="Portfolio showcasing work in software development, data science, and AI.">
+    <meta property="og:image" content="https://Hindav.github.io/portfolio/assets/images/preview.png">
+    <!-- Replace with actual preview image -->
+    <meta property="og:url" content="https://Hindav.github.io/portfolio/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hindav's Portfolio | Data Science & SDE">
+    <meta name="twitter:description"
+        content="Hands-on projects and experience in software engineering, data science, and artificial intelligence.">
+    <meta name="twitter:image" content="https://Hindavvr.github.io/portfolio/assets/preview.png">
+    <!-- Replace if needed -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/ico.png" type="image/png">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/components/about.css">
+    <link rel="stylesheet" href="css/components/resume.css">
+    <link rel="stylesheet" href="css/components/experience.css">
+    <link rel="stylesheet" href="css/components/projects.css">
+    <link rel="stylesheet" href="css/components/publications.css">
+    <link rel="stylesheet" href="css/components/certifications.css">
+    <link rel="stylesheet" href="css/components/education.css">
+    <link rel="stylesheet" href="css/components/achievements.css">
+    <link rel="stylesheet" href="css/components/skills.css">
+    <link rel="stylesheet" href="css/components/contact.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/custom-icons.css">
+    <link rel="stylesheet" href="css/components/modal.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXDCRHZ84K"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZXDCRHZ84K');
+</script>
+
+<body class="light-theme">
+    <!-- Component placeholders -->
+    <div id="header"></div>
+    <div id="hero"></div>
+    <div id="about"></div>
+    <div id="resume"></div>
+    <div id="experience"></div>
+    <div id="projects"></div>
+    <div id="publications"></div>
+    <div id="certifications"></div>
+    <div id="education"></div>
+    <div id="achievements"></div>
+    <div id="modalContainer"></div>
+    <div id="skills"></div>
+    <div id="contact"></div>
+    <div id="footer"></div>
+    <!-- JavaScript -->
+    <script src="js/template-engine.js?v=2"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ai.js?v=2"></script>
+    <script>
+        // Wait for DOM content to be loaded
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Load all components
+            await Promise.all([
+                templateEngine.insertComponent('#header', 'components/header.html'),
+                templateEngine.insertComponent('#hero', 'components/hero.html'),
+                templateEngine.insertComponent('#about', 'components/about.html'),
+                templateEngine.insertComponent('#resume', 'components/resume.html'),
+                templateEngine.insertComponent('#experience', 'components/experience.html'),
+                templateEngine.insertComponent('#projects', 'components/projects.html'),
+                templateEngine.insertComponent('#publications', 'components/publications.html'),
+                templateEngine.insertComponent('#certifications', 'components/certifications.html'),
+                templateEngine.insertComponent('#education', 'components/education.html'),
+                // templateEngine.insertComponent('#achievements', 'components/achievements.html'),
+
+                templateEngine.insertComponent('#contact', 'components/contact.html'),
+                templateEngine.insertComponent('#footer', 'components/footer.html'),
+                templateEngine.insertComponent('#modalContainer', 'components/modal.html'),
+                templateEngine.insertComponent('#skills', 'components/skills.html'),
+            ]);
+
+            // Initialize the site after components are loaded
+            if (window.initSite) {
+                window.initSite();
+            }
+        });
+    </script>
+</body>
+
+</html>

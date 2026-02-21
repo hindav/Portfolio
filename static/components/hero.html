@@ -1,0 +1,90 @@
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container">
+
+        <!-- Main hero content -->
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Hindav Deshmukh</h1>
+                <h2 class="hero-title">Enthusiast in Data Science and Software Development</h2>
+                <p class="hero-description">
+                    Driving data-driven innovations through advanced data science and AI solutions.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/hindav" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/hindav" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://x.com/Hindav_Dev" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/__untitled.exe__/" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://github.com/hindav.png" alt="GitHub Profile" class="profile-image">
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="scroll-down">
+        <a href="#ai-chat"><i class="fas fa-chevron-down"></i></a>
+    </div>
+    
+</section>
+
+<!-- AI Chat Section -->
+<section id="ai-chat">
+    <div class="grok-ai-wrapper">
+        <div class="grok-ai-qa">
+            <h3 class="grok-title">Ask About Hindav</h3>
+            <p class="grok-subtitle">Ask questions about skills, projects, or experience</p>
+
+            <div class="grok-chat hide-scrollbar" id="aiChat"></div>
+
+            <div class="grok-input">
+                <input
+                    type="text"
+                    id="aiQuestion"
+                    placeholder="Ask about Hindav..."
+                    autocomplete="off"
+                />
+                <button id="sendQuestion" aria-label="Send">
+                    <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        >
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+
+                </button>
+            </div>
+
+            <div class="grok-suggestions">
+                <button data-question="What are Hindav's main technical skills?">Technical skills</button>
+                <button data-question="Tell me about the stock market forecasting project">Stock prediction project</button>
+                <button data-question="What technologies does Hindav use for backend development?">Backend technologies</button>
+            </div>
+        </div>
+    </div>
+</section>
