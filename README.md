@@ -1,135 +1,112 @@
-# Hindav's Portfolio Website
+# Hindav Deshmukh | Machine Learning Engineer Portfolio
 
-A modern, responsive portfolio website showcasing Hindav's skills, projects, and professional experience in both Software Development Engineering and Data Science & Machine Learning.
+A premium, modern, and high-performance portfolio website showcasing Hindav Deshmukh's expertise in **Machine Learning Engineering**, **Data Science**, and **Full-Stack Development**.
 
-🔗 [Visit My Portfolio](https://hindav.github.io/portfolio/)
-
----
-
-## Features
-
-- **Responsive Design**: Works seamlessly on devices of all sizes
-- **Light/Dark Mode**: Toggle between light and dark themes
-- **Interactive UI**: Smooth animations and transitions
-- **Resume Section**: Different resume versions for different career focuses
-- **Project Showcase**: Filterable project gallery
-- **Publications & Certifications**: Showcase of academic and professional achievements
-- **Contact Form**: Easy way for visitors to get in touch
+� **Live Demo:** [hindav.vercel.app](https://hindav.vercel.app)
 
 ---
 
-## Technology Stack
+## 🌟 Highlights
 
-- HTML5
-- CSS3 (Flexbox, Grid, Custom Properties)
-- Vanilla JavaScript (ES6+)
-- Component-based Architecture
-- Font Awesome Icons
-- Google Fonts
-- Formspree (for form handling)
+- **AI-Powered Assistant**: An integrated chatbot powered by a hybrid architecture (OpenRouter + Local Fallback) to answer professional queries in real-time.
+- **Project Showcase**: A curated gallery of projects ranging from Healthcare Analytics and Computer Vision to GenAI & RAG systems.
+- **Modern Tech Stack**: Built with FastAPI for a robust backend and optimized Vanilla CSS/JS for a sleek, responsive frontend experience.
+- **Dynamic Content**: Auto-calculating experience and real-time model status via API endpoints.
 
 ---
 
-## CSS Organization
+## 🛠️ Technology Stack
 
-The CSS is organized using a component-based approach:
+### **Backend & AI**
+- **Framework**: FastAPI (Python 3.10+)
+- **AI Models**: Google Gemini 2.0 Flash, Llama 3.2 (via OpenRouter)
+- **Logic**: Hybrid logic with local NLP fallback for 100% uptime.
+- **Deployment**: Vercel (Serverless Functions)
 
-- **base.css**: Core styles, variables, and resets
-- **common.css**: Shared styles used across the site (section headings, animations, utility classes, shared components)
-- **responsive.css**: All media queries and responsive adaptations, organized by component
-- **components/**: Each UI component has its own CSS file (e.g., `header.css`, `hero.css`, `about.css`, etc.)
+### **Frontend**
+- **Core**: HTML5, Vanilla JavaScript (ES6+)
+- **Styling**: Component-based CSS3 (Custom Variables, Flexbox, Grid)
+- **Features**: Light/Dark Mode, smooth animations, responsive grids.
+- **Icons & Fonts**: Font Awesome, Google Fonts (Outfit/Inter)
 
-### CSS Variables
+---
 
-The project uses CSS variables (custom properties) for consistent styling. Example:
+## 📂 Key Projects
 
-```css
-:root {
-  --primary-color: #4361ee;
-  --secondary-color: #3f37c9;
-  --accent-color: #4895ef;
-  --text-color: #333333;
-  --text-color-light: #666666;
-  --bg-color: #ffffff;
-  --bg-color-alt: #f9f9f9;
-  --card-bg: #ffffff;
-  --border-color: #e0e0e0;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --success-color: #4caf50;
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 3rem;
-  --spacing-xl: 5rem;
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 16px;
-  --border-radius-round: 50%;
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
-}
+1.  **Predictive ADR Management System (Professional)**
+    *   *System to predict adverse drug reactions using ensemble algorithms (92% accuracy).*
+    *   **Tech**: Python, Random Forest, Gradient Boosting, Scikit-learn, Flask.
+2.  **StoxAi: AI Stock Prediction System**
+    *   *Hybrid stock forecasting using LSTM and GPT-4 based sentiment analysis (98% accuracy).*
+    *   **Tech**: TensorFlow, FastAPI, GPT-4, Streamlit, Plotly.
+3.  **AskMyDocs**
+    *   *AI-powered document chatbot (RAG) for conversational interaction with uploaded files.*
+    *   **Tech**: LangChain, LLM, Streamlit, RAG.
+4.  **Movie Character Recognition**
+    *   *Real-time character identification using Computer Vision and Deep Learning.*
+    *   **Tech**: OpenCV, CNN, Flask, Deep Learning.
+5.  **Mumbai Housing Prices 2025**
+    *   *Geospatial analysis on 20K+ listings for price prediction and urban study.*
+    *   **Tech**: Pandas, Scikit-learn, Geospatial Analysis.
+6.  **Digital Toolbox**
+    *   *Web suite for image processing, high-accuracy OCR (EasyOCR), and PDF management.*
+    *   **Tech**: EasyOCR, PyMuPDF, OpenCV, Streamlit.
+
+---
+
+## 🤖 Intelligent Profile Assistant
+
+The portfolio features a custom-built API that powers the on-site AI assistant. 
+- **Endpoint**: `/ask` (POST)
+- **Hybrid Logic**: If cloud APIs (OpenRouter) are hit by rate limits or latency, a **local NLP fallback** takes over to ensure 100% uptime.
+- **Context-Aware**: Trained on Hindav's professional experience, skills, and background.
+
+```bash
+# Example Q&A call
+curl -X POST "https://hindav.vercel.app/ask" \
+     -H "Content-Type: application/json" \
+     -d '{"question": "What is Hindav experience in healthcare?"}'
 ```
 
-### Best Practices
+---
 
-- Use existing CSS variables for colors, spacing, etc.
-- Place component-specific styles in their dedicated files under `css/components/`
-- Use BEM naming conventions for clarity
-- Add all responsive styles to `responsive.css`
-- Use `common.css` for shared components
+## 🚀 Local Development
 
-### Dark Mode
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/hindav/Portfolio.git
+   cd Portfolio
+   ```
 
-The site supports dark mode through a class toggle on the `<body>` element. Dark mode styles are included in each component file.
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
+3. **Set up Environment Variables:**
+   Create a `.env` file:
+   ```env
+   OPENROUTER_API_KEY=your_key_here
+   ```
+
+4. **Run the application:**
+   ```bash
+   python app.py
+   # or
+   uvicorn app:app --reload
+   ```
 
 ---
 
-## Setup and Deployment
+## 📄 License
 
-This website is designed to be hosted on GitHub Pages:
-
-1. Fork this repository
-2. Enable GitHub Pages in your repository settings
-3. The site will be available at `https://hindav.github.io/portfolio`
-
-For local development:
-
-1. Clone the repository
-2. Open `index.html` in your browser
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for more details.
 
 ---
 
-## Customization
-
-- Update the profile image in the `assets/images/` folder
-- Replace resume PDFs in `assets/resumes/` with your own
-- Modify project details in the HTML
-- Customize colors in CSS variables (in `base.css`)
-
----
-
-## Contact Form
-
-The contact form uses Formspree to handle submissions. To configure it for your own use:
-1. Sign up for a free Formspree account
-2. Create a new form and get your form endpoint
-3. Replace the action URL in the HTML form
-
----
-
-## License
-
-This project is licensed under the Creative Commons Attribution 4.0 International License.
-
-You are free to use, modify, and share this work, but **must provide appropriate credit** to the original author: **Hindav Deshmukh**
-
----
-
-## Credits
-
-- Icons: [Font Awesome](https://fontawesome.com/)
-- Fonts: [Google Fonts](https://fonts.google.com/)
-- Form Handling: [Formspree](https://formspree.io/)
+## 🤝 Connect
+- **LinkedIn**: [linkedin.com/in/hindav](https://www.linkedin.com/in/hindav)
+- **GitHub**: [github.com/hindav](https://github.com/hindav)
+- **Email**: [Direct Contact via Portfolio](https://hindav.vercel.app#contact)
 
