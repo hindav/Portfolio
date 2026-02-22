@@ -10,6 +10,9 @@ function formatText(text) {
   // Bold (**text**)
   safeText = safeText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
+  // Links ([text](url)) - handle even if inside other tags
+  safeText = safeText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+
   // Lists:
   // 1. Match newline OR start of string, followed by * or - and a space
   safeText = safeText.replace(/(?:^|\n)\s*[\*\-]\s+/g, '<br>• ');

@@ -12,32 +12,44 @@
 /* ======= CSS Variables ======= */
 :root {
     /* Light Theme Colors */
-    --primary-color: #4361ee; /* Desaturated Blue */
-    --primary-color-rgb: 67, 97, 238; /* RGB for Desaturated Blue */
-    --secondary-color: #3f37c9; /* Darker Desaturated Blue */
-    --accent-color: #4895ef; /* Lighter Desaturated Blue */
-    --text-color: #333333; /* Dark Gray */
-    --text-color-light: #666666; /* Medium Gray */
-    --bg-color: #ffffff; /* White */
-    --bg-color-alt: #f9f9f9; /* Light Gray */
-    --card-bg: #ffffff; /* White */
-    --border-color: #e0e0e0; /* Light Gray */
-    --shadow-color: rgba(0, 0, 0, 0.1); /* Soft Shadow */
-    --success-color: #4caf50; /* Green */
-    
+    --primary-color: #4361ee;
+    /* Desaturated Blue */
+    --primary-color-rgb: 67, 97, 238;
+    /* RGB for Desaturated Blue */
+    --secondary-color: #3f37c9;
+    /* Darker Desaturated Blue */
+    --accent-color: #4895ef;
+    /* Lighter Desaturated Blue */
+    --text-color: #333333;
+    /* Dark Gray */
+    --text-color-light: #666666;
+    /* Medium Gray */
+    --bg-color: #ffffff;
+    /* White */
+    --bg-color-alt: #f9f9f9;
+    /* Light Gray */
+    --card-bg: #ffffff;
+    /* White */
+    --border-color: #e0e0e0;
+    /* Light Gray */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    /* Soft Shadow */
+    --success-color: #4caf50;
+    /* Green */
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 3rem;
     --spacing-xl: 5rem;
-    
+
     /* Border Radius */
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
     --border-radius-lg: 16px;
     --border-radius-round: 50%;
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -46,17 +58,28 @@
 
 /* ======= Dark Theme Variables ======= */
 .dark-theme {
-    --primary-color: #4895ef; /* Lighter Desaturated Blue */
-    --primary-color-rgb: 72, 149, 239; /* RGB for Lighter Desaturated Blue */
-    --secondary-color: #3f8efc; /* Darker Desaturated Blue */
-    --accent-color: #5390d9; /* Even Darker Desaturated Blue */
-    --text-color: #e0e0e0; /* Light Gray */
-    --text-color-light: #b0b0b0; /* Medium-Dark Gray */
-    --bg-color: #121212; /* Very Dark Desaturated Blue/Gray */
-    --bg-color-alt: #1e1e1e; /* Darker Gray */
-    --card-bg: #2a2a2a; /* Dark Gray */
-    --border-color: #444444; /* Medium-Dark Gray */
-    --shadow-color: rgba(0, 0, 0, 0.5); /* Darker Shadow */
+    --primary-color: #4895ef;
+    /* Lighter Desaturated Blue */
+    --primary-color-rgb: 72, 149, 239;
+    /* RGB for Lighter Desaturated Blue */
+    --secondary-color: #3f8efc;
+    /* Darker Desaturated Blue */
+    --accent-color: #5390d9;
+    /* Even Darker Desaturated Blue */
+    --text-color: #e0e0e0;
+    /* Light Gray */
+    --text-color-light: #b0b0b0;
+    /* Medium-Dark Gray */
+    --bg-color: #121212;
+    /* Very Dark Desaturated Blue/Gray */
+    --bg-color-alt: #1e1e1e;
+    /* Darker Gray */
+    --card-bg: #2a2a2a;
+    /* Dark Gray */
+    --border-color: #444444;
+    /* Medium-Dark Gray */
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    /* Darker Shadow */
 }
 
 /* ======= Reset ======= */
@@ -69,6 +92,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -78,15 +102,30 @@ body {
     line-height: 1.6;
     transition: background-color var(--transition-normal), color var(--transition-normal);
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 /* ======= Typography ======= */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: var(--spacing-sm);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+strong,
+b {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 a {
@@ -139,12 +178,15 @@ p {
 
 /* Hide scrollbar but allow scrolling */
 .hide-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
+    /* Chrome, Safari, Opera */
 }
 
 /* ======= Button Base Styles ======= */

@@ -45,14 +45,14 @@
     border: 1px solid rgba(var(--primary-color-rgb), 0.1);
     backdrop-filter: blur(10px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 
+    box-shadow:
         0 4px 6px -1px rgba(0, 0, 0, 0.1),
         0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .skills-category:hover {
     transform: translateY(-8px);
-    box-shadow: 
+    box-shadow:
         0 20px 25px -5px rgba(0, 0, 0, 0.1),
         0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
@@ -114,8 +114,8 @@
 /* Proficient Level Skills */
 .skill-tag[data-level="proficient"] {
     background: linear-gradient(135deg,
-        rgba(52, 211, 153, 0.15) 0%,
-        rgba(52, 211, 153, 0.08) 100%);
+            rgba(52, 211, 153, 0.15) 0%,
+            rgba(52, 211, 153, 0.08) 100%);
     border: 1px solid rgba(52, 211, 153, 0.3);
     color: rgb(6, 95, 70);
     font-weight: 600;
@@ -123,8 +123,8 @@
 
 .skill-tag[data-level="proficient"]:hover {
     background: linear-gradient(135deg,
-        rgba(52, 211, 153, 0.25) 0%,
-        rgba(52, 211, 153, 0.15) 100%);
+            rgba(52, 211, 153, 0.25) 0%,
+            rgba(52, 211, 153, 0.15) 100%);
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(52, 211, 153, 0.2);
 }
@@ -132,16 +132,16 @@
 /* Intermediate Level Skills */
 .skill-tag[data-level="intermediate"] {
     background: linear-gradient(135deg,
-        rgba(59, 130, 246, 0.15) 0%,
-        rgba(59, 130, 246, 0.08) 100%);
+            rgba(59, 130, 246, 0.15) 0%,
+            rgba(59, 130, 246, 0.08) 100%);
     border: 1px solid rgba(59, 130, 246, 0.3);
     color: rgb(29, 78, 216);
 }
 
 .skill-tag[data-level="intermediate"]:hover {
     background: linear-gradient(135deg,
-        rgba(59, 130, 246, 0.25) 0%,
-        rgba(59, 130, 246, 0.15) 100%);
+            rgba(59, 130, 246, 0.25) 0%,
+            rgba(59, 130, 246, 0.15) 100%);
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
@@ -149,16 +149,16 @@
 /* exploring Level Skills */
 .skill-tag[data-level="exploring"] {
     background: linear-gradient(135deg,
-        rgba(139, 92, 246, 0.15) 0%,
-        rgba(139, 92, 246, 0.08) 100%);
+            rgba(139, 92, 246, 0.15) 0%,
+            rgba(139, 92, 246, 0.08) 100%);
     border: 1px solid rgba(139, 92, 246, 0.3);
     color: rgb(76, 29, 149);
 }
 
 .skill-tag[data-level="exploring"]:hover {
     background: linear-gradient(135deg,
-        rgba(139, 92, 246, 0.25) 0%,
-        rgba(139, 92, 246, 0.15) 100%);
+            rgba(139, 92, 246, 0.25) 0%,
+            rgba(139, 92, 246, 0.15) 100%);
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
 }
@@ -166,8 +166,8 @@
 /* Familiar Level Skills (AWS Services) */
 .skill-tag[data-level="familiar"] {
     background: linear-gradient(135deg,
-        rgba(255, 153, 0, 0.12) 0%,
-        rgba(255, 153, 0, 0.06) 100%);
+            rgba(255, 153, 0, 0.12) 0%,
+            rgba(255, 153, 0, 0.06) 100%);
     border: 1px solid rgba(255, 153, 0, 0.25);
     color: rgb(180, 83, 9);
     font-size: 0.85rem;
@@ -177,8 +177,8 @@
 /* AWS Services Specific Styling */
 .skill-tag.aws-service {
     background: linear-gradient(135deg,
-        rgba(255, 153, 0, 0.12) 0%,
-        rgba(255, 153, 0, 0.06) 100%);
+            rgba(255, 153, 0, 0.12) 0%,
+            rgba(255, 153, 0, 0.06) 100%);
     border: 1px dashed rgba(255, 153, 0, 0.4);
     font-size: 0.85rem;
     padding: 0.6rem 0.9rem;
@@ -201,8 +201,8 @@
 
 .skill-tag.aws-service:hover {
     background: linear-gradient(135deg,
-        rgba(255, 153, 0, 0.18) 0%,
-        rgba(255, 153, 0, 0.12) 100%);
+            rgba(255, 153, 0, 0.18) 0%,
+            rgba(255, 153, 0, 0.12) 100%);
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(255, 153, 0, 0.2);
 }
@@ -249,7 +249,7 @@
 /* Hover effects */
 .skill-tag:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 
+    box-shadow:
         0 4px 12px rgba(var(--primary-color-rgb), 0.15),
         0 2px 4px rgba(var(--primary-color-rgb), 0.1);
 }
@@ -260,6 +260,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -301,14 +302,17 @@
     color: #34ffb4;
     border-color: #34ffb4;
 }
+
 .dark-theme .skill-tag[data-level="intermediate"] {
     color: #7cb8ff;
     border-color: #7cb8ff;
 }
+
 .dark-theme .skill-tag[data-level="exploring"] {
     color: #c7a6ff;
     border-color: #c7a6ff;
 }
+
 .dark-theme .skill-tag[data-level="familiar"],
 .dark-theme .skill-tag.aws-service {
     color: #ffd580;
@@ -319,19 +323,31 @@
 @media screen and (max-width: 768px) {
     .skills-content {
         grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
-    
+
+    .skills-legend {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .legend-item {
+        font-size: 0.8rem;
+    }
+
     .category-icon {
         width: 48px;
         height: 48px;
         font-size: 1.5rem;
+        flex-shrink: 0;
     }
-    
+
     .skills-category h3 {
         font-size: 1.5rem;
     }
-    
+
     .skills-tag-cloud {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 0.75rem;
     }
 }

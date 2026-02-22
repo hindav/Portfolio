@@ -48,7 +48,9 @@ PROFILE = {
         "pronouns": "He/Him",
         "location": "Pune, Maharashtra, India",
         "nationality": "Indian",
-        "languages": ["English", "Hindi", "Marathi"]
+        "languages": ["English", "Hindi", "Marathi"],
+        "github": "https://github.com/hindav",
+        "linkedin": "https://www.linkedin.com/in/hindav"
     },
     "education": {
         "degree": "Bachelor of Engineering in Computer Science",
@@ -125,34 +127,40 @@ PROFILE = {
             "technologies": ["Python", "Random Forest", "Gradient Boosting", "Flask", "Scikit-learn"]
         },
         {
-            "name": "Excel to Visualise Data",
-            "type": "Data Visualization",
-            "description": "Streamlit app to transform Excel data into interactive Plotly visualizations and dashboards with PPT export.",
-            "technologies": ["Python", "Streamlit", "Plotly", "Pandas"]
-        },
-        {
-            "name": "Digital Toolbox",
-            "type": "Utility Web App",
-            "description": "Versatile web suite for image processing, OCR text extraction (EasyOCR), and PDF management.",
-            "technologies": ["Python", "Streamlit", "EasyOCR", "PyMuPDF", "OpenCV"]
-        },
-        {
-            "name": "StoxAi: Hybrid Stock Prediction System",
+            "name": "StoxAi: AI Stock Prediction System",
             "type": "AI Portfolio",
             "description": "Hybrid stock predictor using LSTM and LLM sentiment analysis (GPT-4) with 98% accuracy.",
             "technologies": ["Python", "TensorFlow", "FastAPI", "GPT-4", "Streamlit", "Plotly"]
         },
         {
+            "name": "AskMyDocs",
+            "type": "GenAI / RAG",
+            "description": "AI-powered document chatbot (RAG) that allows users to interact conversationally with uploaded files.",
+            "technologies": ["Python", "LLM", "RAG", "Streamlit", "LangChain"]
+        },
+        {
             "name": "Movie Character Recognition System",
             "type": "Computer Vision",
-            "description": "AI-powered system to identify movie characters in photos/videos (Research paper published).",
+            "description": "AI-powered system to identify movie characters in photos/videos using Deep Learning.",
             "technologies": ["Python", "Flask", "OpenCV", "Deep Learning", "CNN"]
         },
         {
             "name": "Mumbai Housing Prices 2025",
             "type": "Data Science",
-            "description": "Geospatial analysis and price prediction on 20K+ Mumbai listings.",
+            "description": "Geospatial analysis and price prediction study on 20K+ Mumbai residential listings.",
             "technologies": ["Python", "Pandas", "Scikit-learn", "Geospatial Analysis"]
+        },
+        {
+            "name": "Excel to Visualise Data",
+            "type": "Data Visualization",
+            "description": "Streamlit app to transform Excel data into interactive Plotly visualizations and dashboards.",
+            "technologies": ["Python", "Streamlit", "Plotly", "Pandas"]
+        },
+        {
+            "name": "Digital Toolbox",
+            "type": "Utility",
+            "description": "Web suite for image processing, high-accuracy OCR (EasyOCR), and PDF management.",
+            "technologies": ["Python", "Streamlit", "EasyOCR", "PyMuPDF", "OpenCV"]
         }
     ],
     "certifications": [
@@ -176,7 +184,7 @@ def calculate_age(dob_str):
     return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
 
 def calculate_experience():
-    # Job ended Feb 2026, fixed duration
+    # Job duration from Sep 2024 to Feb 2026 is exactly 1.5 years
     return "1.5 years (Sep 2024 - Feb 2026)"
 
 AGE = calculate_age(PROFILE["identity"]["date_of_birth"])
@@ -233,6 +241,7 @@ CERTIFICATIONS:
 CAREER GOALS:
 - Seeking roles as: {', '.join(PROFILE['career']['target_roles'])}
 - Goal: Become Senior ML Engineer/Lead in 2-3 years
+- More Projects: Encourage users to visit his GitHub for more projects ({PROFILE['identity']['github']})
 
 SOFT SKILLS: {', '.join(PROFILE['soft_skills'])}
 
@@ -285,43 +294,123 @@ def generate_local_answer(question: str):
     q = question.lower()
     
     # extensive keyword matching
-    if any(k in q for k in ['experience', 'work', 'job', 'company', 'role', 'career']):
+    if any(k in q for k in ['experience', 'work', 'job', 'company', 'history', 'background', 'able to']):
         return (
-            f"Hindav has {PROFILE['career']['experience_years']} years of experience. "
-            f"He is currently a {PROFILE['career']['current_role']} at {PROFILE['career']['current_company']} ({PROFILE['career']['domain']} domain). "
-            f"Key responsibilities include {', '.join(PROFILE['experience'][0]['key_project']['responsibilities'][:2])}."
+            f"Hindav is an ML Engineer with **{EXP_DURATION}** of experience. "
+            f"He currently works at **{PROFILE['career']['current_company']}** specializing in {PROFILE['career']['domain']} analytics. "
+            f"His work involves {', '.join(PROFILE['experience'][0]['key_project']['responsibilities'][:2])}."
+        )
+
+    # HR & Contact Priority
+    if any(k in q for k in ['contact', 'email', 'reach', 'social', 'available', 'location', 'pune']):
+        return (
+            f"Hindav is based in **{PROFILE['identity']['location']}** and is currently open to new opportunities. "
+            f"You can reach him professionally through his **[LinkedIn]({PROFILE['identity']['linkedin']})** "
+            f"or by using the **Contact Form** at the bottom of this page."
+        )
+
+    if any(k in q for k in ['seeking', 'looking', 'target', 'apply', 'hire']):
+        return (
+            f"Hindav is currently seeking roles as a **{', '.join(PROFILE['career']['target_roles'][:2])}**. "
+            f"He is looking for opportunities where he can leverage his expertise in Machine Learning and Backend development to solve complex problems."
+        )
+
+    if any(k in q for k in ['strength', 'good at', 'expert', 'top skills']):
+        return (
+            f"Hindav's primary technical strengths are:\n"
+            f"1. **Machine Learning & Deep Learning** (Random Forest, LSTM, Ensemble Learning)\n"
+            f"2. **Backend Development** (FastAPI, Flask, Python)\n"
+            f"3. **Data Science** (Predictive Modeling, Geospatial Analysis)\n"
+            f"He is also skilled in integrating AI models into production-ready web applications."
         )
     
-    if any(k in q for k in ['project', 'build', 'created', 'system']):
+    if any(k in q for k in ['stoxai', 'stock', 'market', 'forecast']):
+        stox = PROFILE['projects'][1]
         return (
-            f"Hindav's featured project is the '{PROFILE['projects'][0]['name']}', a {PROFILE['projects'][0]['description']}. "
-            f"He also worked on: 2. {PROFILE['projects'][1]['name']} ({PROFILE['projects'][1]['technologies'][0]}), "
-            f"3. {PROFILE['projects'][2]['name']}."
+            f"Hindav's **{stox['name']}** is an advanced AI portfolio project. {stox['description']} "
+            f"It was built using **{', '.join(stox['technologies'])}** and achieves a high accuracy of 98%."
+        )
+
+    if any(k in q for k in ['adr', 'adverse', 'healthcare', 'drug', 'newgen']):
+        adr = PROFILE['projects'][0]
+        return (
+            f"The **{adr['name']}** is a professional project Hindav developed at {PROFILE['career']['current_company']}. "
+            f"{adr['description']} It leverages **{', '.join(adr['technologies'])}** to improve patient safety."
+        )
+
+    if any(k in q for k in ['docs', 'askmydocs', 'rag', 'document']):
+        docs = PROFILE['projects'][2]
+        return (
+            f"**{docs['name']}** is one of Hindav's recent AI tools. {docs['description']} "
+            f"He utilized **{', '.join(docs['technologies'])}** to create a conversational interface for documents using GenAI."
+        )
+
+    if any(k in q for k in ['recognition', 'movie', 'character', 'face', 'vision']):
+        vis = PROFILE['projects'][3]
+        return (
+            f"The **{vis['name']}** is a computer vision project. {vis['description']} "
+            f"It uses **{', '.join(vis['technologies'])}** to identify characters in real-time."
+        )
+
+    if any(k in q for k in ['project', 'build', 'created', 'system', 'work']):
+        return (
+            f"Hindav has built several impressive projects across ML and Web development:\n"
+            f"1. **{PROFILE['projects'][0]['name']}** (Healthcare)\n"
+            f"2. **{PROFILE['projects'][1]['name']}** (Stock Prediction)\n"
+            f"3. **{PROFILE['projects'][2]['name']}** (AI Doc Chat)\n"
+            f"4. **{PROFILE['projects'][3]['name']}** (Computer Vision)\n"
+            f"5. **{PROFILE['projects'][4]['name']}** (Data Analysis)\n"
+            f"He also has many more projects exploring different AI and Web technologies! You can see the full list on his GitHub account here: [github.com/hindav]({PROFILE['identity']['github']})"
         )
         
-    if any(k in q for k in ['skill', 'stack', 'tech', 'program', 'language']):
+    if 'backend' in q:
+        return f"For backend development, Hindav uses **{', '.join(PROFILE['skills']['backend'])}**. He also has experience with databases like {', '.join(PROFILE['skills']['databases'])}."
+
+    if any(k in q for k in ['ml', ' ai ', 'machine learning', 'deep learning']):
+        return f"Hindav's ML/AI toolkit includes **{', '.join(PROFILE['skills']['ml'][:10])}**, and specialized techniques in computer vision and sentiment analysis."
+
+    if any(k in q for k in ['language', 'programming', 'code']):
+        return f"Hindav is proficient in **{', '.join(PROFILE['skills']['languages'])}**."
+
+    if any(k in q for k in ['tool', 'git', 'docker']):
+        return f"He uses tools like **{', '.join(PROFILE['skills']['tools'])}** for development and version control."
+
+    if any(k in q for k in ['skill', 'stack', 'tech', 'toolkit']):
         return (
-            f"Here is his tech stack:\n"
-            f"* **Languages**: {', '.join(PROFILE['skills']['languages'])}\n"
-            f"* **ML/AI**: {', '.join(PROFILE['skills']['ml'][:5])}...\n"
+            f"Here is a quick overview of Hindav's tech stack:\n"
             f"* **Backend**: {', '.join(PROFILE['skills']['backend'])}\n"
+            f"* **ML/AI**: {', '.join(PROFILE['skills']['ml'][:5])}...\n"
+            f"* **Languages**: {', '.join(PROFILE['skills']['languages'])}\n"
             f"* **Tools**: {', '.join(PROFILE['skills']['tools'])}"
         )
         
-    if any(k in q for k in ['education', 'college', 'degree', 'study']):
+    if any(k in q for k in ['education', 'college', 'university', 'degree', 'study', 'graduation', 'cgpa']):
         return (
-            f"He completed his {PROFILE['education']['degree']} at {PROFILE['education']['college']} "
-            f"in {PROFILE['education']['graduation_year']} with a CGPA of {PROFILE['education']['cgpa']}."
+            f"Hindav earned his {PROFILE['education']['degree']} from {PROFILE['education']['college']} in {PROFILE['education']['graduation_year']}. "
+            f"He graduated with a CGPA of {PROFILE['education']['cgpa']} and focused his studies on Artificial Intelligence and Machine Learning."
         )
         
-    if any(k in q for k in ['contact', 'email', 'reach', 'social']):
-        return "You can reach Hindav via his LinkedIn profile or the contact form on this website."
+    if any(k in q for k in ['soft skill', 'quality', 'attribute', 'team', 'fit', 'personality']):
+        return (
+            f"Hindav brings a strong mix of technical and soft skills to any team. "
+            f"He is known for being a **{', '.join(PROFILE['soft_skills'][:4])}**. "
+            f"His background in Healthcare has also developed his ability to handle complex domain logic with precision."
+        )
+
+    if any(k in q for k in ['certif', 'course', 'license', 'accomplish']):
+        return (
+            f"Hindav is committed to continuous learning. His professional certifications include:\n"
+            f"• **{PROFILE['certifications'][0]}**\n"
+            f"• **{PROFILE['certifications'][1]}**\n"
+            f"• **{PROFILE['certifications'][2]}**"
+        )
+        
+
 
     # Generic fallback that summarizes everything
     return (
-        f"Hindav Deshmukh is an ML Engineer with {PROFILE['career']['experience_years']} years of experience in Healthcare Analytics. "
-        f"He is skilled in Python, Random Forest, and Deep Learning. "
-        f"Currently, he works at {PROFILE['career']['current_company']} building predictive systems."
+        f"Hindav Deshmukh is a skilled ML Engineer with {EXP_DURATION} of hands-on experience in Healthcare Analytics. "
+        f"He has a strong background in Python, Random Forest, and Deep Learning, currently working at {PROFILE['career']['current_company']} on intelligent predictive systems."
     )
 
 async def ask_openrouter(question: str, use_thinking_model: bool = False):

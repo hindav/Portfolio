@@ -1,321 +1,355 @@
-/* Responsive Styles - Organized by Component */
+/* ============================================================
+   RESPONSIVE DESIGN SYSTEM
+   Organized by Breakpoints (Mobile First)
+   ============================================================ */
 
-/* -------------------------------------------
-   General Responsive Styling
-   ------------------------------------------- */
+/* 1. SMALL MOBILE DEVICES (Max width: 480px) */
 @media only screen and (max-width: 480px) {
-    /* General adjustments */
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.5rem;
-    }
-    
-    h3 {
-        font-size: 1.2rem;
-    }
-    
-    .detail-row {
-        flex-direction: column;
-    }
-}
 
-/* -------------------------------------------
-   Header Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 480px) {
-    /* Header-specific mobile styles would go here */
-}
+    /* Global Adjustments */
+    :root {
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+    }
 
-/* -------------------------------------------
-   Hero Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .section-heading h2,
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Header & Navigation */
+    .logo a {
+        font-size: 1.25rem;
+    }
+
+    .nav-menu {
+        padding: 1.5rem !important;
+        top: 60px !important;
+        height: calc(100vh - 60px) !important;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 0.8rem 0 !important;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 80px 0 5rem;
+        min-height: auto;
+    }
+
+    .scroll-down {
+        bottom: 1.25rem;
+    }
+
     .hero-content {
         flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
     }
-    
-    .hero-image {
-        margin-bottom: 2rem;
+
+    .hero-name {
+        font-size: 2.2rem;
     }
-    
-    .hero-image img {
-        max-width: 180px;
-        height: auto;
-    }
-    
+
     .hero-title {
         font-size: 1.2rem;
     }
-    
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
     .hero-cta {
         flex-direction: column;
-        gap: 1rem;
+        width: 100%;
+        gap: 0.75rem;
     }
-}
 
-/* -------------------------------------------
-   About Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 768px) {
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+
+    .hero-image img.profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .hero-image:before {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* AI Chat Component */
+    .grok-ai-wrapper {
+        padding: 1rem;
+    }
+
+    .grok-ai-qa {
+        padding: 1.5rem;
+    }
+
+    .grok-title {
+        font-size: 1.5rem;
+    }
+
+    .grok-subtitle {
+        font-size: 1rem;
+    }
+
+    .grok-suggestions button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .ai-message {
+        max-width: 90%;
+        font-size: 0.95rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .grok-input {
+        gap: 8px;
+    }
+
+    .grok-input input {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .grok-input button {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* About Section */
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .about-image {
         order: -1;
     }
-    
-    .about-image img {
-        max-width: 280px;
+
+    .about-text h3 {
+        font-size: 1.4rem;
+        display: block;
+        text-align: center;
     }
-    
+
+    .about-text h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about-details {
+        margin-top: 2rem;
+    }
+
     .detail-row {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
-}
 
-@media only screen and (max-width: 480px) {
-    .about-text h3 {
-        font-size: 1.5rem;
+    .detail-item {
+        align-items: center;
     }
-    
-    .about-details {
-        margin-top: 1.5rem;
-    }
-    
-    .detail-icon {
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1rem;
-    }
-}
 
-/* -------------------------------------------
-   Education Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 768px) {
+    /* Resume & Experience */
+    .resume-intro {
+        text-align: center;
+    }
+
+    .resume-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-preview,
+    .btn-download {
+        width: 100%;
+    }
+
+    .exp-card,
     .education-card {
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
-    
-    .education-year {
-        position: relative;
-        display: inline-block;
-        top: 0;
-        left: 0;
-        margin-bottom: 1rem;
-    }
-    
-    .education-degree {
-        font-size: 1.1rem;
-    }
-    
-    .education-school {
-        font-size: 1rem;
-    }
-}
 
-@media only screen and (max-width: 480px) {
-    .education-highlights {
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
         gap: 0.5rem;
     }
-    
-    .education-highlight {
-        padding: 0.4rem 0.75rem;
+
+    .exp-date {
+        padding: 0.3rem 0.6rem;
         font-size: 0.8rem;
     }
-}
 
-/* -------------------------------------------
-   Skills Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 768px) {
-    .skills-content {
+    /* Projects responsiveness handled in projects.css */
+
+    /* Publications & Certifications */
+    .pub-card,
+    .cert-card {
+        padding: 1.25rem;
+    }
+
+    .cert-card {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cert-icon {
+        margin: 0 auto;
+    }
+
+    .cert-content {
+        text-align: center;
+    }
+
+    /* Skills */
+    .skills-grid {
         grid-template-columns: 1fr;
     }
-    
-    .skills-category {
-        margin-bottom: 1.5rem;
-    }
-}
 
-@media only screen and (max-width: 480px) {
-    .skills-category {
-        padding: 1.5rem;
+    .skill-category {
+        padding: 1.25rem;
     }
-    
-    .skill-tag {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
-    }
-}
 
-/* -------------------------------------------
-   Contact Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 768px) {
+    .skill-tags {
+        justify-content: center;
+    }
+
+    /* Contact */
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
-    .contact-info {
-        order: 2;
-    }
-}
 
-@media only screen and (max-width: 480px) {
     .contact-item {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 1.25rem;
+        text-align: center;
+        align-items: center;
     }
-    
-    .contact-icon {
-        margin-bottom: 1rem;
-    }
-    
+
     .contact-form {
         padding: 1.5rem;
     }
-    
-    .form-group {
-        margin-bottom: 1rem;
-    }
-}
 
-/* -------------------------------------------
-   Footer Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 480px) {
-    .footer {
-        padding: 2rem 0 1rem;
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
     }
-    
-    .footer-logo {
-        font-size: 1.5rem;
-    }
-    
-    .footer-social {
-        gap: 0.75rem;
-    }
-    
-    .social-link {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
+
     #scrollToTop {
-        bottom: 1.5rem;
-        right: 1.5rem;
         width: 40px;
         height: 40px;
+        bottom: 1rem;
+        right: 1rem;
     }
 }
 
-/* -------------------------------------------
-   Projects Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 480px) {
-    .project-filters {
-        flex-wrap: wrap;
-        gap: 0.5rem;
+/* 2. TABLET DEVICES (481px to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+        width: 90%;
     }
-    
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-description {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
     .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-content {
         grid-template-columns: 1fr;
     }
 }
 
-/* -------------------------------------------
-   Publications Component Responsive Styling
-   ------------------------------------------- */
-/* Responsive styles now included directly in publications.css with a mobile-first approach */
-
-/* -------------------------------------------
-   Certifications Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 480px) {
-    .cert-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-/* -------------------------------------------
-   Achievements Component Responsive Styling
-   ------------------------------------------- */
-@media only screen and (max-width: 480px) {
-    /* Achievement-specific mobile styles would go here */
-}
-
-/* -------------------------------------------
-   Tablet Responsive Styles (481px - 768px)
-   ------------------------------------------- */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-    /* Tablet styles for various components */
-}
-
-/* -------------------------------------------
-   Small Desktop Responsive Styles (769px - 1024px)
-   ------------------------------------------- */
+/* 3. SMALL LAPTOPS & TABLETS LANDSCAPE (769px to 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    /* Small desktop styles for various components */
-}
+    .hero-name {
+        font-size: 3rem;
+    }
 
-/* -------------------------------------------
-   Large Desktop Responsive Styles (1025px and up)
-   ------------------------------------------- */
-@media only screen and (min-width: 1025px) {
-    /* Large desktop styles for various components */
-}
-
-/* Improved form styling */
-form .form-success {
-    background-color: var(--success-color);
-    color: white;
-    padding: 1rem;
-    border-radius: var(--border-radius-sm);
-    margin-top: 1rem;
-    text-align: center;
-}
-
-/* Improved image styling for projects */
-.project-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: var(--border-radius-md);
-    border-top-right-radius: var(--border-radius-md);
-}
-
-/* Better link styling for the resume section */
-.btn-preview, .btn-download {
-    padding: 0.75rem 1.25rem;
-}
-
-@media (max-width: 480px) {
-    .btn-preview, .btn-download {
-        width: 100%;
-        margin-bottom: 0.75rem;
-        text-align: center;
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Add smooth image transitions */
-.project-image img, .profile-image {
-    transition: transform var(--transition-normal);
+/* 4. UTILITY CLASSES FOR RESPONSIVENESS */
+.hide-mobile {
+    @media (max-width: 768px) {
+        display: none !important;
+    }
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.05);
+.show-mobile {
+    @media (min-width: 769px) {
+        display: none !important;
+    }
 }
 
-.profile-image:hover {
-    transform: scale(1.05);
+/* Ensure images don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Better Scrolling for Mobile */
+body {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Animation performance on mobile */
+@media (max-width: 768px) {
+    * {
+        animation-delay: 0s !important;
+    }
+
+    .hero-image {
+        animation: float 6s ease-in-out infinite;
+        /* Slower floating on mobile */
+    }
 }

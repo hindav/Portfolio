@@ -1,8 +1,8 @@
-# Aravinth's Portfolio Website
+# Hindav's Portfolio Website
 
-A modern, responsive portfolio website showcasing Aravinth's skills, projects, and professional experience in both Software Development Engineering and Data Science & Machine Learning.
+A modern, responsive portfolio website showcasing Hindav's skills, projects, and professional experience in both Software Development Engineering and Data Science & Machine Learning.
 
-🔗 [Visit My Portfolio](https://aravinthvr.github.io/portfolio/)
+🔗 [Visit My Portfolio](https://hindav.github.io/portfolio/)
 
 ---
 
@@ -83,64 +83,6 @@ The project uses CSS variables (custom properties) for consistent styling. Examp
 
 The site supports dark mode through a class toggle on the `<body>` element. Dark mode styles are included in each component file.
 
----
-
-## Project Structure
-
-```
-portfolio/
-├── index.html
-├── css/
-│   ├── base.css
-│   ├── common.css
-│   ├── responsive.css
-│   ├── components/
-│   │   ├── header.css
-│   │   ├── hero.css
-│   │   ├── about.css
-│   │   ├── resume.css
-│   │   ├── projects.css
-│   │   ├── publications.css
-│   │   ├── certifications.css
-│   │   ├── education.css
-│   │   ├── achievements.css
-│   │   ├── skills.css
-│   │   ├── contact.css
-│   │   ├── footer.css
-│   │   └── custom-icons.css
-├── components/
-│   ├── header.html
-│   ├── hero.html
-│   ├── about.html
-│   ├── resume.html
-│   ├── projects.html
-│   ├── publications.html
-│   ├── certifications.html
-│   ├── education.html
-│   ├── achievements.html
-│   ├── skills.html
-│   ├── contact.html
-│   └── footer.html
-├── js/
-│   ├── main.js
-│   └── template-engine.js
-├── assets/
-│   ├── favicon.svg
-│   ├── images/
-│   │   ├── Aravinth.jpg
-│   │   ├── Abaram_Award.jpg
-│   │   ├── Outstanding_Contributor.jpeg
-│   │   ├── coursera-logo.svg
-│   │   └── scaler-logo.svg
-│   ├── projects/
-│   │   ├── enterprise-dashboard.svg
-│   │   ├── predictive-model.svg
-│   │   └── ecg-classification.svg
-│   └── resumes/
-│       ├── Aravinth_Resume_SDE.pdf
-│       ├── Aravinth_Resume_DSML.pdf
-│       └── Aravinth_Resume.pdf
-```
 
 ---
 
@@ -150,7 +92,7 @@ This website is designed to be hosted on GitHub Pages:
 
 1. Fork this repository
 2. Enable GitHub Pages in your repository settings
-3. The site will be available at `https://aravinthvr.github.io/portfolio`
+3. The site will be available at `https://hindav.github.io/portfolio`
 
 For local development:
 
@@ -181,7 +123,7 @@ The contact form uses Formspree to handle submissions. To configure it for your 
 
 This project is licensed under the Creative Commons Attribution 4.0 International License.
 
-You are free to use, modify, and share this work, but **must provide appropriate credit** to the original author: **Aravinthaprasath V.**
+You are free to use, modify, and share this work, but **must provide appropriate credit** to the original author: **Hindav Deshmukh**
 
 ---
 

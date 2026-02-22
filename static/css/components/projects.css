@@ -7,7 +7,8 @@
 /* Projects Section */
 .projects {
     background-color: var(--bg-color-alt);
-    position: relative; /* For positioning arrow container */
+    position: relative;
+    /* For positioning arrow container */
 }
 
 /* Project Filters */
@@ -16,7 +17,8 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 1.5rem; /* Reduced margin as arrows take space */
+    margin-bottom: 1.5rem;
+    /* Reduced margin as arrows take space */
 }
 
 .filter-button {
@@ -43,32 +45,43 @@
 
 /* Horizontal Scroll Wrapper - now default */
 .horizontal-scroll-wrapper {
-    position: relative; /* Needed for absolute positioning of arrows if container is inside */
+    position: relative;
+    /* Needed for absolute positioning of arrows if container is inside */
     overflow-x: auto;
-    padding-bottom: 1rem; /* Space for scrollbar if not hidden by OS overlay */
-    margin-bottom: -1rem; /* Counteract padding-bottom for layout consistency */
+    padding-bottom: 1rem;
+    /* Space for scrollbar if not hidden by OS overlay */
+    margin-bottom: -1rem;
+    /* Counteract padding-bottom for layout consistency */
+    /* Scroll Snapping */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     /* Hide Scrollbar */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
+
 .horizontal-scroll-wrapper::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, Opera */
+    display: none;
+    /* Chrome, Safari, Opera */
 }
 
 /* Scroll Content (was .projects-grid when horizontal) - now default */
-.projects .scroll-content { /* Specific to projects section */
+.projects .scroll-content {
+    /* Specific to projects section */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 0; /* Remove grid gap, manage spacing with project-card margin */
-    padding-bottom: 1.5rem; /* Ensure cards don't get cut off by wrapper padding */
+    gap: 0;
+    /* Remove grid gap, manage spacing with project-card margin */
+    padding-bottom: 1.5rem;
+    /* Ensure cards don't get cut off by wrapper padding */
 }
 
 /* Project Grid (was part of scroll-content, now just for card layout within flex items) */
 /* No longer a grid container itself when horizontal scroll is active by default */
-.projects-grid {
-    /* Styles that were here for grid layout are now on .scroll-content or .project-card */
-}
+/* .projects-grid styles replaced by flexbox layout */
 
 
 /* Project Card - adjusted for horizontal layout */
@@ -82,13 +95,21 @@
     flex-direction: column;
     /* height: 100%; /* This might be problematic in flex row if content varies */
     border: 1px solid var(--border-color);
-    flex: 0 0 auto; /* Prevent shrinking */
-    width: 360px; /* Fixed width for horizontal items */
-    margin-right: 1.5rem; /* Space between cards */
-    margin-bottom: 0; /* Remove grid gap effect */
+    flex: 0 0 auto;
+    /* Prevent shrinking */
+    width: 360px;
+    /* Fixed width for horizontal items */
+    margin-right: 1.5rem;
+    /* Space between cards */
+    margin-bottom: 0;
+    /* Remove grid gap effect */
+    scroll-snap-align: center;
+    /* Snap to center */
 }
+
 .project-card:last-child {
-    margin-right: 0; /* No margin for the last card */
+    margin-right: 0;
+    /* No margin for the last card */
 }
 
 
@@ -135,7 +156,8 @@
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex: 1; /* Allow content to grow and push links to bottom */
+    flex: 1;
+    /* Allow content to grow and push links to bottom */
 }
 
 .project-title {
@@ -175,7 +197,8 @@
 .project-links {
     display: flex;
     gap: 1rem;
-    margin-top: auto; /* Pushes to the bottom */
+    margin-top: auto;
+    /* Pushes to the bottom */
     border-top: 1px solid var(--border-color);
     padding-top: 1rem;
 }
@@ -213,92 +236,113 @@
 /* Scroll Arrow Styling */
 .scroll-arrow-container {
     display: flex;
-    justify-content: space-between; /* Puts one arrow on each side */
+    justify-content: space-between;
+    /* Puts one arrow on each side */
     align-items: center;
-    position: absolute; /* Position relative to the .projects section */
-    top: calc(50% + 20px); /* Adjust this based on card height and filter height */
+    position: absolute;
+    /* Position relative to the .projects section */
+    top: calc(50% + 20px);
+    /* Adjust this based on card height and filter height */
     left: 0;
     right: 0;
-    padding: 0 var(--spacing-sm); /* Add some padding from section edges */
+    padding: 0 var(--spacing-sm);
+    /* Add some padding from section edges */
     transform: translateY(-50%);
-    z-index: 20; /* Above cards but below header/nav if overlapping */
-    pointer-events: none; /* Container doesn't block clicks on cards */
+    z-index: 20;
+    /* Above cards but below header/nav if overlapping */
+    pointer-events: none;
+    /* Container doesn't block clicks on cards */
 }
 
 .scroll-arrow {
-    background-color: rgba(30, 30, 30, 0.6); /* Darker, more visible background */
+    background-color: rgba(30, 30, 30, 0.6);
+    /* Darker, more visible background */
     color: white;
     border: none;
     border-radius: 50%;
-    width: 40px; /* Fixed size */
+    width: 40px;
+    /* Fixed size */
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s ease, opacity 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    pointer-events: all; /* Arrows are clickable */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: all;
+    /* Arrows are clickable */
 }
 
 .scroll-arrow:hover {
-    background-color: rgba(var(--primary-color-rgb), 0.8); /* Use primary color on hover */
+    background-color: rgba(var(--primary-color-rgb), 0.8);
+    /* Use primary color on hover */
 }
 
 .scroll-arrow.disabled {
     opacity: 0.3;
     cursor: default;
-    background-color: rgba(50,50,50,0.3); /* More distinct disabled state */
+    background-color: rgba(50, 50, 50, 0.3);
+    /* More distinct disabled state */
 }
 
 .scroll-arrow i {
-    font-size: 1rem; /* Adjust icon size */
+    font-size: 1rem;
+    /* Adjust icon size */
 }
 
 /* Adjustments for arrow positioning on smaller screens */
 @media (max-width: 768px) {
     .scroll-arrow-container {
-        top: calc(50% + 10px); /* Adjust vertical position */
+        top: calc(50% + 10px);
+        /* Adjust vertical position */
         padding: 0 var(--spacing-xs);
     }
+
     .scroll-arrow {
         width: 36px;
         height: 36px;
     }
+
     .scroll-arrow i {
         font-size: 0.9rem;
     }
+
     .project-card {
-        width: 320px; /* Slightly smaller cards on mobile */
+        width: 320px;
+        /* Slightly smaller cards on mobile */
     }
 }
 
 @media (max-width: 576px) {
+    .projects .scroll-content {
+        padding: 0 15px;
+        /* Side padding to give space for first/last card */
+        gap: 15px;
+        /* Consistent gap */
+    }
+
     .project-card {
-        width: 290px; /* Even smaller cards */
+        width: calc(100vw - 30px);
+        /* Fill screen width minus container padding */
+        max-width: none;
+        margin-right: 0;
+        /* Gaps handled by 'gap' property */
+        scroll-snap-align: center;
     }
-     .scroll-arrow-container {
-        /* Hide arrows on very small screens or adjust position significantly if needed */
-        /* display: none; */ 
-        /* Or adjust top to be less likely to overlap content */
-        top: calc(50% + 50px); 
+
+    .scroll-arrow-container {
+        top: calc(50% + 40px);
+    }
+
+    .scroll-arrow {
+        width: 32px;
+        height: 32px;
+        background-color: rgba(30, 30, 30, 0.8);
+        /* Higher contrast */
     }
 }
 
-/* Project Modal (local one, ensure it's scoped or removed if not used) */
-/* ... existing modal styles ... */
-/* Ensure these .modal- styles are specific if this modal is different from the global PDF modal */
-/* For example, by prefixing with .projects-section .modal- or similar */
-
-.projects .project-modal { /* Scoping example */
-    display: none;
-    /* ... other styles ... */
-}
-
-.projects .modal-content { /* Scoping example */
-    /* ... other styles ... */
-}
-/* ... etc. for all project-specific modal styles ... */
+/* Unused project-specific modal styles removed */
 
 /* Removing old responsive grid styles as they are now handled by flexbox */
 /* @media screen and (max-width: 992px) { ... } */
@@ -310,13 +354,15 @@
 /* Ensure the existing filter responsiveness for small screens is preserved */
 @media screen and (max-width: 576px) {
     .project-filters {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        /* Back to row but wrap */
+        justify-content: center;
         gap: 0.5rem;
     }
-    
+
     .filter-button {
-        width: 100%;
-        max-width: 280px;
+        width: auto;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 }
